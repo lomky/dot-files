@@ -45,4 +45,5 @@ function parse_git_dirty {
         fi
 }
 
+export TZ="US/Eastern"
 export PS1="\[\e[32m\]\d\[\e[m\] \[\e[32m\]\t\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\]\w \\$ "
