@@ -1,7 +1,12 @@
 set ai
 set si
 set number
-set tabstop=4
+
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+set autoindent
 
 set list
 set listchars=trail:·,precedes:<,extends:>,tab:\»\
@@ -11,7 +16,7 @@ let g:miniBufExplSplitBelow=1
 
 set hlsearch
 
-filetype on
+filetype plugin indent on
 
 colorscheme murphy
 
