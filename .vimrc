@@ -16,6 +16,8 @@ let g:miniBufExplSplitBelow=1
 
 set hlsearch
 
+filetype plugin on
+
 filetype plugin indent on
 
 colorscheme murphy
@@ -23,3 +25,7 @@ colorscheme murphy
 if &diff
     colorscheme evening
 endif
+
+runtime macros/matchit.vim
+
+syntax on
