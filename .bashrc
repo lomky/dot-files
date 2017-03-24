@@ -47,3 +47,8 @@ function parse_git_dirty {
 
 export TZ="US/Eastern"
 export PS1="\[\e[32m\]\d\[\e[m\] \[\e[32m\]\t\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\]\w \\$ "
+
+alias ltr='ls -latr'
+alias dirtrim_1='export PROMPT_DIRTRIM=1'
+alias dirtrim_2='export PROMPT_DIRTRIM=2'
+alias dirtrim_3='export PROMPT_DIRTRIM=3'
