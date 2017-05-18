@@ -1,0 +1,20 @@
+# .bash_profile
+# For the next time I forget:
+# .bash_profile is run when you _login_ to a system.
+# .bashrc is run each time you start an interactive shell.
+
+# This .bash_profile is intended to be linked for machines I ssh into
+
+# Get the base bash_profile
+if [ -f ~/.bash_profile_base ]; then 
+    . ~/.bash_profile_base
+fi
+
+# Get the machine tweaks
+if [ -f ~/.bash_profile_tweaks ]; then 
+    . ~/.bash_profile_tweaks
+fi
+
+# Autolaunch the existing or a new screen session
+if $(screen -ls | grep -q pts); then  screen -x; else screen -R; fi
+

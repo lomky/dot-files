@@ -1,4 +1,7 @@
 # .bash_profile
+# For the next time I forget:
+# .bash_profile is run when you _login_ to a system.
+# .bashrc is run each time you start an interactive shell.
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then 
@@ -14,5 +17,4 @@ fi
 # Set up history to work right with screen
 shopt -s histappend
 
-# Autolaunch the existing or a new screen session
-if $(screen -ls | grep -q pts); then  screen -x; else screen -R; fi
+

@@ -1,0 +1,17 @@
+# .bash_profile
+# For the next time I forget:
+# .bash_profile is run when you _login_ to a system.
+# .bashrc is run each time you start an interactive shell.
+
+# This .bash_profile is intended to be linked for machines I'm running locally or with a GUI.
+
+# Get the base bash_profile
+if [ -f ~/.bash_profile_base ]; then 
+    . ~/.bash_profile_base
+fi
+
+# Get the machine tweaks - always last
+if [ -f ~/.bash_profile_tweaks ]; then 
+    . ~/.bash_profile_tweaks
+fi
+
