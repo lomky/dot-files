@@ -1,2 +1,11 @@
 hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%Y %M %d %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
+
 defscrollback 100000
+
+
+# Hide hardstatus: ctrl-a f
+bind f eval "hardstatus ignore"
+# # Show hardstatus: ctrl-a F
+bind F eval "hardstatus alwayslastline"
+
+source $HOME/.screenrc_tweaks

@@ -42,4 +42,13 @@ Machine specific overrides should go in file `~/.bash_aliases_tweaks`
 `ln -s ~/.dot-files/.vim .`  
 `ln -s ~/.dot-files/.vimrc .`  
 
-TODO: local overrides
+TODO: local overrides  
+Unclear where there should go, given Vundles locale requirements.  
+One for vundle, one for other?  
+
+### Screen file
+
+`cd`  
+`ln -s ~/.dot-files/.screenrc .`  
+
+Machine specific overrides should go in file `~/.screenrc_tweaks`  
