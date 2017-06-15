@@ -58,6 +58,7 @@ Machine specific overrides should go in file `~/.screenrc_tweaks`
 ### User-level Git ignore
 
 Unix machines:  
+`cd`  
 `git config --global core.excludesfile ~/.gitignore`  
 `ln -s ~/.dot-files/.gitignore-nix`  
 
