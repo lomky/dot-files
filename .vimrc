@@ -95,6 +95,9 @@ set listchars=trail:·,precedes:<,extends:>,tab:\»\
  set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " let g:miniBufExplSplitBelow=1
 
+" md is markdown, for me!
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 colorscheme murphy
 
 if &diff
