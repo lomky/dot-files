@@ -1,5 +1,5 @@
 # dot-files
-Convenient backup of all my commonly used unix dot files, configurations, etc
+Convenient backup of all my commonly used unix dot files, configurations, etc  
 
 ## Clone to expected location
 
@@ -9,7 +9,7 @@ Convenient backup of all my commonly used unix dot files, configurations, etc
 
 ### Bash Files
 
-**.bash_profile** - _aka run-at-login_
+**.bash_profile** - _aka run-at-login_  
 
 UI machines:  
 `ln -s ~/.dot-files/.bash_profile_base ~/.bash_profile_base`  
@@ -21,20 +21,20 @@ terminal machines:
 
 Machine specific overrides should be placed in file `~/.bash_profile_tweaks`
 
-**.bashrc** - _aka run on any terminal launch_
+**.bashrc** - _aka run on any terminal launch_  
 
 All machines:  
 `ln -s ~/.dot-files/.bashrc ~/`  
 `ln -s ~/.dot-files/.bashrc_git ~/`  
 
-Machine specific overrides should go in file `~/.bashrc_tweaks`
+Machine specific overrides should go in file `~/.bashrc_tweaks`  
 
-**.bash_aliases** 
+**.bash_aliases**  
 
 All machines:  
 `ln -s ~/.dot-files/.bash_aliases ~/`  
 
-Machine specific overrides should go in file `~/.bash_aliases_tweaks`
+Machine specific overrides should go in file `~/.bash_aliases_tweaks`  
 
 ### Vim files
 
@@ -52,3 +52,10 @@ One for vundle, one for other?
 `ln -s ~/.dot-files/.screenrc .`  
 
 Machine specific overrides should go in file `~/.screenrc_tweaks`  
+
+### User-level Git ignore
+
+Unix machines:  
+`git config --global core.excludesfile ~/.gitignore`  
+`ln -s ~/.dot-files/.gitignore-nix`  
+

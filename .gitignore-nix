@@ -1,0 +1,6 @@
+# Vim temporary files
+*~
+
+# Vim swap files, common cases
+*.swp
+*.swo
