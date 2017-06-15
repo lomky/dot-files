@@ -40,7 +40,9 @@ Machine specific overrides should go in file `~/.bash_aliases_tweaks`
 
 `cd`  
 `ln -s ~/.dot-files/.vim .`  
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
 `ln -s ~/.dot-files/.vimrc .`  
+`vim +PluginInstall +qall`  
 
 TODO: local overrides  
 Unclear where there should go, given Vundles locale requirements.  
