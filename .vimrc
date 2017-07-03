@@ -70,23 +70,48 @@ if version >= 700
   set nospell
 endif
 
-" line numbers!
+" line numbers! Ruler! Column highlight!
 set number
 set ruler
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
-" Ignoring case is a fun trick
-set ignorecase
+" search improvements. 
+set incsearch     " highlight as typing
+set ignorecase    " ignore case
+set smartcase     " unless I type uppercase
+set hlsearch      " Highlight all matches
+highlight clear Search
+highlight       Search   ctermfg=White
 
-" And so is Artificial Intellegence!
-set smartcase
+"=====[ Highlight matches when jumping to next ]=============
 
-" search as we type & highlight
-set incsearch
-set hlsearch
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+
+" highlight the match in red
+function! HLNext (blinktime)
+    highlight WhiteOnRed ctermfg=white ctermbg=red
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
 
 " show me my whitespace
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
-set listchars=trail:·,precedes:<,extends:>,tab:\»\
+
+" semicolon is the new colon
+nnoremap ; :
+
+" buffer display zone
 
 " set laststatus=0
 " let g:miniBufExplSplitBelow=1
