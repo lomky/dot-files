@@ -62,3 +62,9 @@ Unix machines:
 `git config --global core.excludesfile ~/.gitignore`  
 `ln -s ~/.dot-files/.gitignore-nix`  
 
+### Improve the quality of fortunes
+
+Unix machines:  
+`cd /usr/share/games/fortune`
+`sudo tar xzvf ~/.dot-files/fortune_collection.tar.gz`  
+

@@ -11,6 +11,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Achieve wisdom
+fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 
 # Get the machine tweaks - always last
 if [ -f ~/.bashrc_tweaks ]; then 
