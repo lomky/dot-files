@@ -60,7 +60,17 @@ Machine specific overrides should go in file `~/.screenrc_tweaks`
 Unix machines:  
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
-`ln -s ~/.dot-files/.gitignore-nix`  
+`ln -s ~/.dot-files/.gitignore-nix`
+
+### Ask Git to stash my credentials
+
+Unix machines:  
+`git config --global credential.helper cache`  
+`git config --global credential.helper 'cache --timeout=3600'`  
+
+Mac:  
+`git credential-osxkeychain`  
+`git config --global credential.helper osxkeychain`  
 
 ### Improve the quality of fortunes
 
