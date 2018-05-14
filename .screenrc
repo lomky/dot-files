@@ -8,4 +8,5 @@ bind f eval "hardstatus ignore"
 # # Show hardstatus: ctrl-a F
 bind F eval "hardstatus alwayslastline"
 
-source $HOME/.screenrc_tweaks
+# Machine specific tweaks go here after creating a local machien branch
+#
