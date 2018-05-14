@@ -21,3 +21,5 @@ shopt -s histappend
 
 # Add any machine specific tweaks here after creating a machine-local branch
 
+# unknown purpose
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
