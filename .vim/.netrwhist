@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/ktipton/repos/gcis'
+let g:netrw_dirhist_2='/home/ktipton/repos/gcis/lib/Tuba'
+let g:netrw_dirhist_3='/home/ktipton/repos/gcis/lib/Tuba/DB/Mixin/Object/Generic'
+let g:netrw_dirhist_4='/home/ktipton/repos/gcis-endnote-process/01_creating_uuids'
+let g:netrw_dirhist_5='/home/ktipton/repos/gcis/lib/Tuba'

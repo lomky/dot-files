@@ -16,6 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 " https://github.com/bling/vim-bufferline
 Plugin 'bling/vim-bufferline'
 
+" https://github.com/chrisbra/csv.vim
+Plugin 'chrisbra/csv.vim'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
