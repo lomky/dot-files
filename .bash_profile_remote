@@ -21,6 +21,8 @@ shopt -s histappend
 
 ## Add any machine specific tweaks here after creating a machine-local branch
 
+source ~/.git-completion.bash
+source ~/perl5/perlbrew/etc/bashrc
 
 ##################
 

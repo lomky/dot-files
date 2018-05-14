@@ -9,4 +9,16 @@ bind f eval "hardstatus ignore"
 bind F eval "hardstatus alwayslastline"
 
 # Machine specific tweaks go here after creating a local machien branch
-#
+screen bash
+title vim
+screen bash
+screen bash
+title morbo
+screen psql -d gcis
+title db
+screen bash
+title gcisops
+screen tail -f /usr/local/projects/gcis/log/production.log
+title drlogs
+screen sudo tail -f /var/log/nginx/access.log /var/log/nginx/error.log
+title nginx logs

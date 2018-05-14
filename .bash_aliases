@@ -10,3 +10,8 @@ alias dirtrim_3='export PROMPT_DIRTRIM=3'
 #local tweaks
 
 # Local overrides go here after creating a machine-specific branch
+
+alias cdg='cd ~/repos/gcis'
+alias cdG='cd /usr/local/projects/gcis'
+alias logs='tail -f /usr/local/projects/gcis/log/production.log'
+alias gs='git status'
