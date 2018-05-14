@@ -5,16 +5,25 @@
 
 # This .bash_profile is intended to be linked for machines I ssh into
 
-# Get the base bash_profile
-if [ -f ~/.bash_profile_base ]; then 
-    . ~/.bash_profile_base
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then 
+    . ~/.bashrc
 fi
 
-# Get the machine tweaks
-if [ -f ~/.bash_profile_tweaks ]; then 
-    . ~/.bash_profile_tweaks
+# User specific environment and startup programs
+if [ -d "$HOME/bin" ] ; then
+  PATH=$PATH:$HOME/bin
+  export PATH
 fi
 
-# Autolaunch the existing or a new screen session
+# Set up history to work right with screen
+shopt -s histappend
+
+## Add any machine specific tweaks here after creating a machine-local branch
+
+
+##################
+
+# Last, Autolaunch the existing or a new screen session
 if $(screen -ls | grep -q pts); then  screen -x; else screen -R; fi
 

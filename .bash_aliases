@@ -7,8 +7,4 @@ alias dirtrim_3='export PROMPT_DIRTRIM=3'
 
 #local tweaks
 
-# Get the overrides
-if [ -f ~/.bash_aliases_tweak ]; then 
-    . ~/.bash_aliases_tweak
-fi
-
+# Local overrides go here after creating a machine-specific branch

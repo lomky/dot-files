@@ -52,7 +52,7 @@ filetype plugin on
 set showcmd
 
 "fold based on indentation, by default
-set foldmethod=indent
+"set foldmethod=indent
 
 syntax enable
 

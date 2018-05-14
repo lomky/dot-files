@@ -12,8 +12,5 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 
-# Get the machine tweaks - always last
-if [ -f ~/.bashrc_tweaks ]; then 
-    . ~/.bashrc_tweaks
-fi
+# Add machine specific tweaks here after creating a local machine branch
 
