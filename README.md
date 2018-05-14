@@ -66,5 +66,28 @@ creating a machine specific branch
 Unix machines:  
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
-`ln -s ~/.dot-files/.gitignore-nix`  
+`ln -s ~/.dot-files/.gitignore-nix`
+
+### Git aliases
+
+Pretty, dense log:  
+`hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short`  
+Delete all branches merged into master (except `master` & `development`)  
+`cleanup = "!git checkout master && git branch --merged | grep  -v '\\*\\|master\\|development' | xargs -r -n 1 git branch -d && git checkout -"`  
+
+### Ask Git to stash my credentials
+
+Unix machines:  
+`git config --global credential.helper cache`  
+`git config --global credential.helper 'cache --timeout=3600'`  
+
+Mac:  
+`git credential-osxkeychain`  
+`git config --global credential.helper osxkeychain`  
+
+### Improve the quality of fortunes
+
+Unix machines:  
+`cd /usr/share/games/fortune`
+`sudo tar xzvf ~/.dot-files/fortune_collection.tar.gz`  
 
