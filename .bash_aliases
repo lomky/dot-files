@@ -10,3 +10,4 @@ alias dirtrim_3='export PROMPT_DIRTRIM=3'
 #local tweaks
 
 # Local overrides go here after creating a machine-specific branch
+alias cdg='cd ~/repo/gcis'

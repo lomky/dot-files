@@ -12,7 +12,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Achieve wisdom
-fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
+#fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
 
 # Add machine specific tweaks here after creating a local machine branch
 
