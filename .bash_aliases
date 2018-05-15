@@ -11,3 +11,5 @@ alias dirtrim_3='export PROMPT_DIRTRIM=3'
 
 # Local overrides go here after creating a machine-specific branch
 alias cdg='cd ~/repo/gcis'
+alias sscp="scp -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias sssh="ssh -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
