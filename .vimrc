@@ -16,6 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " https://github.com/bling/vim-bufferline
 Plugin 'bling/vim-bufferline'
 
+" https://github.com/mhinz/vim-startify
+Plugin 'mhinz/vim-startify'
+
+" https://github.com/ctrlpvim/ctrlp.vim
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
