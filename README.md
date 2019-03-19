@@ -15,10 +15,10 @@ Convenient backup of all my commonly used unix dot files, configurations, etc
 **.bash_profile** - _aka run-at-login_  
 
 UI machines:  
-`ln -s ~/.dot-files/.bash_profile_local ~/.bash_profile`  
+`ln -s ~/.dot-files/bash/.bash_profile_local ~/.bash_profile`  
 
 terminal machines:  
-`ln -s ~/.dot-files/.bash_profile_remote ~/.bash_profile`  
+`ln -s ~/.dot-files/bash/.bash_profile_remote ~/.bash_profile`  
 
 Machine specific overrides should be placed in file `~/.bash_profile` after
 creating a machine specific branch
@@ -26,8 +26,8 @@ creating a machine specific branch
 **.bashrc** - _aka run on any terminal launch_  
 
 All machines:  
-`ln -s ~/.dot-files/.bashrc ~/`  
-`ln -s ~/.dot-files/.bashrc_git ~/`  
+`ln -s ~/.dot-files/bash/.bashrc ~/`  
+`ln -s ~/.dot-files/bash/.bashrc_git ~/`  
 
 Machine specific overrides should be placed in file `~/.bashrc` after
 creating a machine specific branch
@@ -36,7 +36,7 @@ creating a machine specific branch
 **.bash_aliases**  
 
 All machines:  
-`ln -s ~/.dot-files/.bash_aliases ~/`  
+`ln -s ~/.dot-files/bash/.bash_aliases ~/`  
 
 Machine specific overrides should be placed in file `~/.bash_aliases` after
 creating a machine specific branch
@@ -44,9 +44,9 @@ creating a machine specific branch
 ### Vim files
 
 `cd`  
-`ln -s ~/.dot-files/.vim .`  
+`ln -s ~/.dot-files/vim/.vim .`  
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
-`ln -s ~/.dot-files/.vimrc .`  
+`ln -s ~/.dot-files/vim/.vimrc .`  
 `vim +PluginInstall +qall`  
 
 Machine specific overrides should be placed in file `~/.vimrc` after
@@ -55,7 +55,7 @@ creating a machine specific branch
 ### Screen file
 
 `cd`  
-`ln -s ~/.dot-files/.screenrc .`  
+`ln -s ~/.dot-files/screen/.screenrc .`  
 
 Machine specific overrides should be placed in file `~/.screenrc` after
 creating a machine specific branch
@@ -66,7 +66,7 @@ creating a machine specific branch
 Unix machines:  
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
-`ln -s ~/.dot-files/.gitignore-nix`
+`ln -s ~/.dot-files/git/.gitignore-nix`
 
 ### Git aliases
 
@@ -93,7 +93,7 @@ Unix machines:
 
 # Version
 
-1.0.0  
+1.0.1  
 
 ## Version History
 
