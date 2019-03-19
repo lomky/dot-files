@@ -16,6 +16,15 @@ Plugin 'VundleVim/Vundle.vim'
 " https://github.com/bling/vim-bufferline
 Plugin 'bling/vim-bufferline'
 
+" https://github.com/mhinz/vim-startify
+Plugin 'mhinz/vim-startify'
+
+" https://github.com/ctrlpvim/ctrlp.vim
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" https://github.com/nathangrigg/vim-beancount
+Plugin 'nathangrigg/vim-beancount'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
@@ -122,6 +131,9 @@ nnoremap ; :
 
 " md is markdown, for me!
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" my beancount decimal goes on columnn 70
+let g:beancount_separator_col=70
 
 colorscheme murphy
 
