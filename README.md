@@ -91,3 +91,11 @@ Unix machines:
 `cd /usr/share/games/fortune`
 `sudo tar xzvf ~/.dot-files/fortune_collection.tar.gz`  
 
+# Version
+
+1.0.0  
+
+## Version History
+
+## 1.0.0 - 2019-03
+Began tracking version
