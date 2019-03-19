@@ -4,3 +4,5 @@
 # Vim swap files, common cases
 *.swp
 *.swo
+
+tmp
