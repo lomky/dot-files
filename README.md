@@ -60,6 +60,11 @@ creating a machine specific branch
 Machine specific overrides should be placed in file `~/.screenrc` after
 creating a machine specific branch
 
+### Set Git configs
+
+`git config --global core.editor "vim"`
+`git config --global user.email "email@example.com"`
+`git config --global user.name "Kat Tipton"`
 
 ### User-level Git ignore
 
