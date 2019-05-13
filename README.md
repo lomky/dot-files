@@ -62,9 +62,14 @@ creating a machine specific branch
 
 ### Set Git configs
 
-`git config --global core.editor "vim"`
-`git config --global user.email "email@example.com"`
-`git config --global user.name "Kat Tipton"`
+Set editor, user, and email
+`git config --global core.editor "vim"`  
+`git config --global user.email "email@example.com"`  
+`git config --global user.name "Kat Tipton"`  
+
+Set aliases for a nice history log and to cleanup local merged branches
+`git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"`  
+`git config --global alias.cleanup "git config alias checkout master && git branch --merged | grep -v '\\*\\|master\\|development' | xargs -r -n 1 git branch -d && git checkout -"`  
 
 ### User-level Git ignore
 
@@ -72,13 +77,6 @@ Unix machines:
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
 `ln -s ~/.dot-files/git/.gitignore-nix`
-
-### Git aliases
-
-Pretty, dense log:  
-`hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short`  
-Delete all branches merged into master (except `master` & `development`)  
-`cleanup = "!git checkout master && git branch --merged | grep  -v '\\*\\|master\\|development' | xargs -r -n 1 git branch -d && git checkout -"`  
 
 ### Ask Git to stash my credentials
 
