@@ -22,16 +22,45 @@ if [ -f ~/.bashrc_git ]; then
 fi
 
 export TZ="US/Eastern"
-export PS1="\[\e[32m\]\d\[\e[m\] \[\e[32m\]\t\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\]\w \\$ "
+export PS1="\[\e[32m\]\d\[\e[m\] \[\e[92m\]\t\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\] \[\e[m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
+# \[\e[32m\]                                                       # Green flag
+# \d                                                               # date
+# \[\e[m\]                                                         # White flag
+# \[\e[92m\]                                                       # Light Green flag
+# \t                                                               # time
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # Green flag
+# \`parse_git_branch\`                                             # git branch
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # White flag
+# \w                                                               # pwd
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # Green flag
+# $ "                                                              # $
+# \[\e[m\]                                                         # White flag
+
+# Pride prompt
+#export PS1="🌈 \[\e[91m\]\d\[\e[m\] \[\e[93m\]\t\[\e[m\] \[\e[32m\]\`parse_git_branch\`\[\e[m\] \[\e[94m\]\w\[\e[m\] \[\e[95m\]\\$\[\e[m\] "
+#  🌈                                                              # pride
+# \[\e[92m\]                                                       # Light Green flag
+# \t                                                               # time
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # Green flag
+# \`parse_git_branch\`                                             # git branch
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # White flag
+# \w                                                               # pwd
+# \[\e[m\]                                                         # White flag
+# \[\e[32m\]                                                       # Green flag
+# $ "                                                              # $
+# \[\e[m\]                                                         # White flag
 
 # Get the bash aliases
 if [ -f ~/.bash_aliases ]; then 
     . ~/.bash_aliases
 fi
 
-# Add machine specific tweaks here after creating a local machine branch
-
-# Get the bash local
+# Get the bash local configs
 if [ -f ~/.bashrc_local ]; then 
     . ~/.bashrc_local
 fi

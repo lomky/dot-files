@@ -1,4 +1,3 @@
-
 alias ll='ls -lat'
 alias ltr='ls -latr'
 alias lsd='ls -l | grep ^d'
@@ -16,4 +15,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 #local tweaks
 
-# Local overrides go here after creating a machine-specific branch
+# Get the bash aliases
+if [ -f ~/.bash_aliases_local ]; then
+    . ~/.bash_aliases_local
+fi

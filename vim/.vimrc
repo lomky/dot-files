@@ -28,6 +28,9 @@ Plugin 'nathangrigg/vim-beancount'
 " https://github.com/drewtempelmeyer/palenight.vim
 Plugin 'drewtempelmeyer/palenight.vim'
 
+" https://github.com/tpope/vim-rails
+Plugin 'tpope/vim-rails'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
@@ -85,8 +88,14 @@ endif
 " line numbers! Ruler! Column highlight!
 set number
 set ruler
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+if exists('+colorcolumn')
+  highlight ColorColumn ctermbg=magenta
+  set colorcolumn=120
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%121', 100)
 
 " search improvements. 
 set incsearch     " highlight as typing
@@ -151,3 +160,5 @@ let g:palenight_terminal_italics=1
 
 filetype plugin indent on
 syntax on
+
+" Match ruby do/end
