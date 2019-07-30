@@ -162,3 +162,4 @@ filetype plugin indent on
 syntax on
 
 " Match ruby do/end
+runtime macros/matchit.vim
