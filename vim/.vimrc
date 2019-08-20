@@ -34,6 +34,9 @@ Plugin 'tpope/vim-rails'
 " https://github.com/mbbill/undotree
 Plugin 'mbbill/undotree'
 
+" https://github.com/thoughtbot/vim-rspec
+Plugin 'thoughtbot/vim-rspec'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
