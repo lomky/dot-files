@@ -195,3 +195,11 @@ end
 " persist the undo tree for each file
 set undofile
 set undodir^=~/.vim/undo//
+
+"rspec commands
+:let mapleader = ","
+let g:rspec_command = "!bundle exec rspec {spec}"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
