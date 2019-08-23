@@ -37,6 +37,7 @@ alias gd='git diff'
 
 # Install thefuck everywhere
 eval $(thefuck --alias fuck)
+alias please='fuck'
 
 #local tweaks
 # Get the bash aliases
