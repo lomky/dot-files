@@ -34,6 +34,7 @@ alias gp='git pull'
 alias gP='git push'
 alias gb='git blame'
 alias gd='git diff'
+alias gap='git add --patch'
 
 # Install thefuck everywhere
 eval $(thefuck --alias fuck)

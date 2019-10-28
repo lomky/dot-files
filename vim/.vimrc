@@ -163,6 +163,9 @@ set background=dark
 colorscheme palenight
 "let g:lightline.colorscheme = 'palenight'
 let g:palenight_terminal_italics=1
+"if (has("termguicolors"))
+  "set termguicolors
+"endif
 
 filetype plugin indent on
 syntax on
@@ -203,3 +206,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" fold markdown
+let g:markdown_folding = 1
