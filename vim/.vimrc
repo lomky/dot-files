@@ -37,6 +37,12 @@ Plugin 'mbbill/undotree'
 " https://github.com/thoughtbot/vim-rspec
 Plugin 'thoughtbot/vim-rspec'
 
+" https://github.com/tpope/vim-surround
+Plugin 'tpope/vim-surround'
+
+" https://github.com/tpope/vim-repeat
+Plugin 'tpope/vim-repeat'
+
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
   " plugin on GitHub repo
