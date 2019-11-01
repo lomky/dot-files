@@ -1,13 +1,6 @@
 # dot-files
 Convenient backup of all my commonly used unix dot files, configurations, etc  
 
-## Clone to expected location & create branch
-
-`git clone https://github.com/lomky/dot-files.git ~/.dot-files`  
-`git checkout -b DESCRIPTIVE_MACHINE_NAME`  
-`git push --set-upstream origin DESCRIPTIVE_MACHINE_NAME`  
-
-
 ## Structure
 
 ### Bash Files
@@ -84,18 +77,14 @@ Mac:
 `git credential-osxkeychain`  
 `git config --global credential.helper osxkeychain`  
 
-### Improve the quality of fortunes
-
-Unix machines:  
-`cd /usr/share/games/fortune`
-`sudo tar xzvf ~/.dot-files/fortune_collection.tar.gz`  
-
 # Version
 
-1.1.0  
+1.1.1  
 
 ## Version History
 
+## 1.1.1 - 2019-11
+Remove fortune stuff
 ## 1.1.0 - 2019-10
 Prefer `_local` to branching. If it's good enough to commit, it's probably worth having on other machines.
 ## 1.0.0 - 2019-03
