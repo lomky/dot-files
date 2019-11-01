@@ -20,8 +20,7 @@ UI machines:
 terminal machines:  
 `ln -s ~/.dot-files/bash/.bash_profile_remote ~/.bash_profile`  
 
-Machine specific overrides should be placed in file `~/.bash_profile` after
-creating a machine specific branch
+Machine specific overrides should be placed in file `~/.bash_profile_local`
 
 **.bashrc** - _aka run on any terminal launch_  
 
@@ -29,8 +28,7 @@ All machines:
 `ln -s ~/.dot-files/bash/.bashrc ~/`  
 `ln -s ~/.dot-files/bash/.bashrc_git ~/`  
 
-Machine specific overrides should be placed in file `~/.bashrc` after
-creating a machine specific branch
+Machine specific overrides should be placed in file `~/.bashrc_local`
 
 
 **.bash_aliases**  
@@ -49,16 +47,14 @@ creating a machine specific branch
 `ln -s ~/.dot-files/vim/.vimrc .`  
 `vim +PluginInstall +qall`  
 
-Machine specific overrides should be placed in file `~/.vimrc` after
-creating a machine specific branch
+Machine specific overrides aren't well handled ¯\_(ツ)_/¯
 
 ### Screen file
 
 `cd`  
 `ln -s ~/.dot-files/screen/.screenrc .`  
 
-Machine specific overrides should be placed in file `~/.screenrc` after
-creating a machine specific branch
+Machine specific overrides should be placed in file `~/.screenrc_local`
 
 ### Set Git configs
 
@@ -96,9 +92,11 @@ Unix machines:
 
 # Version
 
-1.0.1  
+1.1.0  
 
 ## Version History
 
+## 1.1.0 - 2019-10
+Prefer `_local` to branching. If it's good enough to commit, it's probably worth having on other machines.
 ## 1.0.0 - 2019-03
 Began tracking version
