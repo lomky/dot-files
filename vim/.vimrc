@@ -14,7 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " https://github.com/bling/vim-bufferline
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 
 " https://github.com/mhinz/vim-startify
 Plugin 'mhinz/vim-startify'
@@ -42,6 +42,12 @@ Plugin 'tpope/vim-surround'
 
 " https://github.com/tpope/vim-repeat
 Plugin 'tpope/vim-repeat'
+
+" https://github.com/ervandew/supertab
+Plugin 'ervandew/supertab'
+
+" https://github.com/vim-airline/vim-airline
+Plugin 'vim-airline/vim-airline'
 
 " The following are examples of different formats supported.
   " Keep Plugin commands between vundle#begin/end.
@@ -79,7 +85,7 @@ filetype plugin on
 set showcmd
 
 "fold based on indentation, by default
-"set foldmethod=indent
+set foldmethod=indent
 
 syntax enable
 
@@ -109,7 +115,7 @@ endif
 "highlight ColorColumn ctermbg=magenta
 "call matchadd('ColorColumn', '\%121', 100)
 
-" search improvements. 
+" search improvements.
 set incsearch     " highlight as typing
 set ignorecase    " ignore case
 set smartcase     " unless I type uppercase
@@ -144,35 +150,18 @@ set list
 " semicolon is the new colon
 nnoremap ; :
 
-" buffer display zone
-
-" set laststatus=0
-" let g:miniBufExplSplitBelow=1
-
- set laststatus=2
- set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
-" let g:miniBufExplSplitBelow=1
-
 " md is markdown, for me!
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " my beancount decimal goes on columnn 70
 let g:beancount_separator_col=70
 
-"colorscheme murphy
-
-"if &diff
-    "colorscheme evening
-"endif
-
+" okay, palenight is gorgeous colorscheme
 set background=dark
 colorscheme palenight
-"let g:lightline.colorscheme = 'palenight'
 let g:palenight_terminal_italics=1
-"if (has("termguicolors"))
-  "set termguicolors
-"endif
 
+" boop boop
 filetype plugin indent on
 syntax on
 
@@ -196,9 +185,9 @@ set nobackup
 set backupcopy=auto
 " patch required to honor double slash at end
 if has("patch-8.1.0251")
-	" consolidate the writebackups -- not a big
-	" deal either way, since they usually get deleted
-	set backupdir^=~/.vim/backup//
+    " consolidate the writebackups -- not a big
+    " deal either way, since they usually get deleted
+    set backupdir^=~/.vim/backup//
 end
 
 " persist the undo tree for each file
@@ -215,3 +204,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " fold markdown
 let g:markdown_folding = 1
+
+" fold on <space>
+nnoremap <Space> za
+
+" Customizing airline
+" show all the buffers for single tab
+let g:airline#extensions#tabline#enabled = 1
