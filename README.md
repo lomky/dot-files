@@ -29,8 +29,7 @@ Machine specific overrides should be placed in file `~/.bashrc_local`
 All machines:  
 `ln -s ~/.dot-files/bash/.bash_aliases ~/`  
 
-Machine specific overrides should be placed in file `~/.bash_aliases` after
-creating a machine specific branch
+Machine specific overrides should be placed in file `~/.bash_aliases_local`
 
 ### Vim files
 
@@ -51,14 +50,15 @@ Machine specific overrides should be placed in file `~/.screenrc_local`
 
 ### Set Git configs
 
-Set editor, user, and email
+Set editor, user, and email  
 `git config --global core.editor "vim"`  
 `git config --global user.email "email@example.com"`  
 `git config --global user.name "Kat Tipton"`  
 
-Set aliases for a nice history log and to cleanup local merged branches
+Set aliases for a nice history log and to cleanup local merged branches  
 `git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"`  
 `git config --global alias.cleanup "git config alias checkout master && git branch --merged | grep -v '\\*\\|master\\|development' | xargs -r -n 1 git branch -d && git checkout -"`  
+`git config --global alias.pub = "!git push -u origin $(git branch-name)"`  
 
 ### User-level Git ignore
 
@@ -79,13 +79,14 @@ Mac:
 
 # Version
 
-1.1.1  
+1.1.2  
 
 ## Version History
-
-## 1.1.1 - 2019-11
+#### 1.1.2 - 2020-08
+Fix README formatting, new git alias
+#### 1.1.1 - 2019-11
 Remove fortune stuff
-## 1.1.0 - 2019-10
+#### 1.1.0 - 2019-10
 Prefer `_local` to branching. If it's good enough to commit, it's probably worth having on other machines.
-## 1.0.0 - 2019-03
+#### 1.0.0 - 2019-03
 Began tracking version
