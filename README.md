@@ -95,7 +95,7 @@ PROFILE_DIR=""
 
 # Version
 
-1.2.0  
+1.2.1  
 
 ## Version History
 #### 1.2.1 - 2021-01
