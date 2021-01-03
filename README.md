@@ -48,7 +48,8 @@ Machine specific overrides aren't well handled ¯\_(ツ)_/¯
 
 Machine specific overrides should be placed in file `~/.screenrc_local`
 
-### Set Git configs
+### Git
+#### Set Git configs
 
 Set editor, user, and email  
 `git config --global core.editor "vim"`  
@@ -60,14 +61,14 @@ Set aliases for a nice history log and to cleanup local merged branches
 `git config --global alias.cleanup "git config alias checkout master && git branch --merged | grep -v '\\*\\|master\\|development' | xargs -r -n 1 git branch -d && git checkout -"`  
 `git config --global alias.pub = "!git push -u origin $(git branch-name)"`  
 
-### User-level Git ignore
+#### User-level Git ignore
 
 Unix machines:  
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
 `ln -s ~/.dot-files/git/.gitignore-nix`
 
-### Ask Git to stash my credentials
+#### Ask Git to stash my credentials
 
 Unix machines:  
 `git config --global credential.helper cache`  
@@ -77,11 +78,27 @@ Mac:
 `git credential-osxkeychain`  
 `git config --global credential.helper osxkeychain`  
 
+### Firefox profile
+
+Apply custom browser css
+
+Activate custom css:
+Open Firefox & load `about:config`, set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
+
+Grab our profile dir:
+Load `about:profiles` and copy the root profile directory:
+PROFILE_DIR=""
+`mkdir $PROFILE_DIR/chrome`
+`ln -s ~/.dot-files/firefox/userChrome-nix.css $PROFILE_DIR/chrome/userChrome.css`
+
+
 # Version
 
-1.1.2  
+1.2.0  
 
 ## Version History
+#### 1.2.0 - 2021-01
+Add Firefox userChrome.css. Fully nuke fortune.
 #### 1.1.2 - 2020-08
 Fix README formatting, new git alias
 #### 1.1.1 - 2019-11

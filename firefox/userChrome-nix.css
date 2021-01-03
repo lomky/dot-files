@@ -1,0 +1,28 @@
+/*
+ * https://github.com/Timvde/UserChrome-Tweaks
+ */
+
+/*
+ *    Hide Tabs on Topbar
+ */
+#TabsToolbar {
+    visibility: collapse !important;
+}
+
+#titlebar {
+    visibility: collapse !important;
+}
+
+/*
+*   NOTE: If you hide the sidebar header it can get tricky to switch between diffrent addons sidebars.
+*
+*/
+#sidebar-header {
+    visibility: collapse !important;
+}
+
+/*
+*    Show Bookmarks only in new Tab
+*/
+#nav-bar:not(:focus-within) + #PersonalToolbar:not(:hover):not(:focus-within):not([customizing]) { visibility: collapse; }
+
