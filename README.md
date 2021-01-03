@@ -51,10 +51,11 @@ Machine specific overrides should be placed in file `~/.screenrc_local`
 ### Git
 #### Set Git configs
 
-Set editor, user, and email  
+Set editor, user, and email. In this house we use `main`  
 `git config --global core.editor "vim"`  
 `git config --global user.email "email@example.com"`  
 `git config --global user.name "Kat Tipton"`  
+`git config --global init.defaultBranch main`  
 
 Set aliases for a nice history log and to cleanup local merged branches  
 `git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"`  
@@ -97,6 +98,8 @@ PROFILE_DIR=""
 1.2.0  
 
 ## Version History
+#### 1.2.1 - 2021-01
+New git config to prefer `main`
 #### 1.2.0 - 2021-01
 Add Firefox userChrome.css. Fully nuke fortune.
 #### 1.1.2 - 2020-08
