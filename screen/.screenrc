@@ -3,6 +3,8 @@ hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%D %Y %M %d 
 
 defscrollback 100000
 
+# Make the background refresh its color properly
+defbce "on"
 
 # Hide hardstatus: ctrl-a f
 bind f eval "hardstatus ignore"

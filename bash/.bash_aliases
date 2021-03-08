@@ -15,10 +15,6 @@ alias dirtrim_3='export PROMPT_DIRTRIM=3'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Delete local branches whose remote tracking branch is gone
-# Required to clean up squashed merged branches :(
-alias gitclean="git fetch -p && for branch in "`git branch -vv | awk '{print $1,$4}' | grep 'gone]' | awk '{print $1}'`"; do git branch -D \"$branch\"; done"
-
 # Run rubocop in autofix mode
 alias rcfix='rubocop -a'
 
@@ -30,10 +26,12 @@ alias ber='bundle exec rails'
 
 # Quick git commands
 alias gg='git grep'
+alias ggn='git grep --name-only'
 alias gp='git pull'
 alias gP='git push'
 alias gb='git blame'
 alias gd='git diff'
+alias gdn='git diff --name-only'
 alias gap='git add --patch'
 
 # Install thefuck everywhere
