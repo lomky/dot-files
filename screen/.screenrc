@@ -13,7 +13,4 @@ bind F eval "hardstatus alwayslastline"
 
 screen -t vim
 screen -t bash
-screen -t db
-screen -t cons
 screen -t serv
-screen -t fe
