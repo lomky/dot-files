@@ -14,3 +14,4 @@ bind F eval "hardstatus alwayslastline"
 screen -t vim
 screen -t bash
 screen -t serv
+screen -t sb
