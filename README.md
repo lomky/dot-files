@@ -93,11 +93,24 @@ PROFILE_DIR=""
 `ln -s ~/.dot-files/firefox/userChrome-nix.css $PROFILE_DIR/chrome/userChrome.css`
 
 
+### Font
+
+```bash
+cd ~/.dot-files/fonts/victor-mono/ && git pull && cd
+mkdir ~/tmp ~/tmp/VM ~/.local/share/fonts/
+cd ~/tmp/VM && unzip ~/.dot-files/fonts/victor-mono/public/VictorMonoAll.zip && cd
+mv ~/tmp/VM/TTF ~/.local/share/fonts/VictorMono
+rm -rf ~/tmp/VM
+fc-cache -f -v
+```
+
 # Version
 
-1.2.1  
+1.3.0  
 
 ## Version History
+#### 1.3.0 - 2021-06
+Added font config
 #### 1.2.1 - 2021-01
 New git config to prefer `main`
 #### 1.2.0 - 2021-01
