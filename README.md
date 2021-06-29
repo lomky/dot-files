@@ -80,15 +80,14 @@ Set editor, user, and email. In this house we use `main`
 
 Set aliases for a nice history log and to cleanup local merged branches  
 `git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"`  
-`git config --global alias.pub = "!git push -u origin $(git branch-name)"`  
-`git config --global alias.co checkout'  
+`git config --global alias.co checkout`  
 
 #### User-level Git ignore
 
 Unix machines:  
 `cd`  
 `git config --global core.excludesfile ~/.gitignore`  
-`ln -s ~/.dot-files/git/.gitignore-nix`  
+`ln -s ~/.dot-files/git/.gitignore-nix ~/.gitignore`  
 
 #### Ask Git to stash my credentials
 
@@ -117,9 +116,9 @@ PROFILE_DIR=""
 ### Font
 
 ```bash
-cd ~/.dot-files/fonts/victor-mono/ && git pull && cd
+git clone https://github.com/rubjo/victor-mono ~/.victor-mono
 mkdir ~/tmp ~/tmp/VM ~/.local/share/fonts/
-cd ~/tmp/VM && unzip ~/.dot-files/fonts/victor-mono/public/VictorMonoAll.zip && cd
+cd ~/tmp/VM && unzip ~/.victor-mono/public/VictorMonoAll.zip && cd
 mv ~/tmp/VM/TTF ~/.local/share/fonts/VictorMono
 rm -rf ~/tmp/VM
 fc-cache -f -v
@@ -127,9 +126,11 @@ fc-cache -f -v
 
 # Version
 
-1.3.0  
+1.4.1  
 
 ## Version History
+#### 1.4.1 - 2021-06
+Fix font config, typos
 #### 1.4.0 - 2021-06
 Added font config
 #### 1.3.0 - 2021-03
