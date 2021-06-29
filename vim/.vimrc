@@ -395,6 +395,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc configs end
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

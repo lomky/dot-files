@@ -1,2 +1,4 @@
-.vim/bundle
-vim/.vim/bundle/Vundle.vim
+
+# editor files
+*.swp
+*.un~
