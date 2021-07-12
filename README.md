@@ -4,7 +4,7 @@ Convenient backup of all my commonly used unix dot files, configurations, etc
 ## Installs
 
 ```bash
-sudo apt install vim screen thefuck python3-distutils keepassxc curl rbenv
+sudo apt install vim screen thefuck python3-distutils keepassxc curl rbenv i3 i3status
 ```
 
 ```bash
@@ -99,7 +99,7 @@ Mac:
 `git credential-osxkeychain`  
 `git config --global credential.helper osxkeychain`  
 
-### Firefox profile
+### Firefox profile styling
 
 Apply custom browser css  
 
@@ -124,11 +124,22 @@ rm -rf ~/tmp/VM
 fc-cache -f -v
 ```
 
+### i3wm
+
+```bash
+mkdir -p ~/.config/i3 ~/.config/i3status
+ln -s ~/.dot-files/i3/i3-config ~/.config/i3/config
+ln -s ~/.dot-files/i3/i3status-config ~/.config/i3status/config
+```
+
+
 # Version
 
-1.4.1  
+1.5.0  
 
 ## Version History
+#### 1.5.0 - 2021-07
+Add i3wm
 #### 1.4.1 - 2021-06
 Fix font config, typos
 #### 1.4.0 - 2021-06
