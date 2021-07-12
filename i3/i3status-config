@@ -1,0 +1,69 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "tztime local"
+order += "disk /"
+order += "disk /media/lomky/FreshStart2021/"
+order += "disk /media/lomky/2017 Data Drive"
+order += "ethernet enp5s0"
+order += "memory"
+order += "load"
+
+wireless wlan0 {
+        format_up = "   W: (%quality at %essid, %bitrate) %ip   "
+        format_down = "   W: down   "
+}
+
+ethernet enp5s0 {
+        format_up = "   E: %ip (%speed)   "
+        format_down = "   E: down   "
+        color_good = "#FFFFFF"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+        format_down = "   VPN:off   "
+}
+
+tztime local {
+        format = "   %I:%M %B %d, %Y   "
+}
+
+load {
+        format = "   %1min %5min %15min   "
+}
+
+memory {
+        format = "   Mem: %percentage_used   "
+        threshold_degraded = "10%"
+        format_degraded = "   MEMORY: %free(%percentage_free)   "
+}
+
+disk "/" {
+        format = "   /: %free(%percentage_free) "
+        prefix_type = "custom"
+        low_threshold = "10"
+        threshold_type = "percentage_free"
+        format_below_threshold = "   Warning: %percentage_avail(%free) "
+}
+
+disk "/media/lomky/FreshStart2021/" {
+        format = " FS21: %free(%percentage_free) "
+        prefix_type = "custom"
+        low_threshold = "10"
+        threshold_type = "percentage_free"
+        format_below_threshold = " Warning: %percentage_avail(%free) "
+}
+
+
+disk "/media/lomky/2017 Data Drive" {
+        format = " 17DD: %free(%percentage_free)   "
+        prefix_type = "custom"
+        low_threshold = "10"
+        threshold_type = "percentage_free"
+        format_below_threshold = " Warning: %percentage_avail(%free)   "
+}
+
