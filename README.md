@@ -4,7 +4,9 @@ Convenient backup of all my commonly used unix dot files, configurations, etc
 ## Installs
 
 ```bash
-sudo apt install vim screen thefuck python3-distutils keepassxc curl rbenv i3 i3status
+sudo add-apt-repository ppa:regolith-linux/stable
+sudo apt update
+sudo apt install vim screen thefuck python3-distutils keepassxc curl rbenv i3-gaps i3status
 ```
 
 ```bash
@@ -135,9 +137,12 @@ ln -s ~/.dot-files/i3/i3status-config ~/.config/i3status/config
 
 # Version
 
-1.5.0  
+1.5.1  
 
 ## Version History
+#### 1.5.1 - 2021-07
+i3-gaps
+Added todo
 #### 1.5.0 - 2021-07
 Add i3wm
 #### 1.4.1 - 2021-06
@@ -158,3 +163,6 @@ Remove fortune stuff
 Prefer `_local` to branching. If it's good enough to commit, it's probably worth having on other machines.  
 #### 1.0.0 - 2019-03
 Began tracking version  
+
+# TODO
+c/p getting unwieldly, probably should look into automated things at this point

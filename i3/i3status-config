@@ -5,8 +5,7 @@ general {
 
 order += "tztime local"
 order += "disk /"
-order += "disk /media/lomky/FreshStart2021/"
-order += "disk /media/lomky/2017 Data Drive"
+order += "wireless wlan0"
 order += "ethernet enp5s0"
 order += "memory"
 order += "load"
@@ -48,22 +47,5 @@ disk "/" {
         low_threshold = "10"
         threshold_type = "percentage_free"
         format_below_threshold = "   Warning: %percentage_avail(%free) "
-}
-
-disk "/media/lomky/FreshStart2021/" {
-        format = " FS21: %free(%percentage_free) "
-        prefix_type = "custom"
-        low_threshold = "10"
-        threshold_type = "percentage_free"
-        format_below_threshold = " Warning: %percentage_avail(%free) "
-}
-
-
-disk "/media/lomky/2017 Data Drive" {
-        format = " 17DD: %free(%percentage_free)   "
-        prefix_type = "custom"
-        low_threshold = "10"
-        threshold_type = "percentage_free"
-        format_below_threshold = " Warning: %percentage_avail(%free)   "
 }
 

@@ -65,3 +65,8 @@ if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
 
+xsetroot -solid "#0f440f"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
