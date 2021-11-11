@@ -56,18 +56,15 @@ Machine specific overrides should be placed in file `~/.bash_aliases_local`
 
 ### Vim files
 
-`cd`  
-`ln -s ~/.dot-files/vim/.vim .`  
-`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
-`ln -s ~/.dot-files/vim/.vimrc .`  
-`vim +PluginInstall +qall`  
+`ln -s ~/.dot-files/vim/.vimrc ~/`  
+
+Plugins install on first run.
 
 Machine specific overrides aren't well handled ¯\_(ツ)_/¯  
 
 ### Screen file
 
-`cd`  
-`ln -s ~/.dot-files/screen/.screenrc .`  
+`ln -s ~/.dot-files/screen/.screenrc ~/`  
 
 Machine specific overrides should be placed in file `~/.screenrc_local`  
 
@@ -87,7 +84,6 @@ Set aliases for a nice history log and to cleanup local merged branches
 #### User-level Git ignore
 
 Unix machines:  
-`cd`  
 `git config --global core.excludesfile ~/.gitignore`  
 `ln -s ~/.dot-files/git/.gitignore-nix ~/.gitignore`  
 
@@ -134,12 +130,33 @@ ln -s ~/.dot-files/i3/i3-config ~/.config/i3/config
 ln -s ~/.dot-files/i3/i3status-config ~/.config/i3status/config
 ```
 
+Background images:
+
+set the script to gnome or i3
+
+if on i3, install feh
+```bash
+sudo apt install feh
+```
+
+set the cron:
+```bash
+* * * * * ~/.dot-files/bin/random-unsplash-background
+```
+
+
+
+
+
 
 # Version
 
-1.5.1  
+1.6.0
 
 ## Version History
+#### 1.6.0 - 2021-11
+rewrite vimrc
+beta background script
 #### 1.5.1 - 2021-07
 i3-gaps
 Added todo

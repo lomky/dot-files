@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! -z $1 ]; then
+  wget -O ~/tmp/wallpaper.jpg https://source.unsplash.com/1600x900/?$1
+else
+  wget -O ~/tmp/wallpaper.jpg https://source.unsplash.com/random
+fi
+
+# Gnome
+#gsettings set org.gnome.desktop.background picture-uri file:///tmp/wallpaper.jpg
+
+# i3
+feh --bg-fill ~/tmp/wallpaper.jpg
+# make a png for the i3lock
+rm ~/tmp/wallpaper.png
+mogrify -format png ~/tmp/wallpaper.jpg
