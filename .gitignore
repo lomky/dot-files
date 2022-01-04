@@ -1,3 +1,5 @@
 vim/.vim/bundle/
 vim/.vim/bundle/Vundle.vim
 *.un~
+node_modules
+yarn.lock
