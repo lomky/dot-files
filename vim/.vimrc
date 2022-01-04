@@ -73,7 +73,7 @@
       Plug 'sainnhe/everforest'
 
   "                                                                                                                TOOLS
-    "                                                                                         CTRL-P
+    "                                                                                                             CTRL-P
       " Fuzzy-path finding with Ctrl-P
       " Press <F5> purge cache
       " Press <c-f> and <c-b> to cycle modes.
@@ -87,7 +87,7 @@
       " https://github.com/ctrlpvim/ctrlp.vim
       Plug 'ctrlpvim/ctrlp.vim'
 
-    "                                                                                   SURROUND.VIM
+    "                                                                                                       SURROUND.VIM
       " Surround.vim - easily delete, change and add surroundings in pairs.
       " https://github.com/tpope/vim-surround
       " cs'" -> 'foo' becomes "foo"
@@ -105,7 +105,7 @@
       Plug 'michal-h21/vim-zettel'
 
   "                                                                                           LANGUAGE-SPECIFIC SETTINGS
-    "                                                                                          BEANCOUNT
+    "                                                                                                          BEANCOUNT
       " https://github.com/nathangrigg/vim-beancount
       " Syntax highlighting, AlignCommodity, & ^X^O autocomplete accounts
       Plug 'nathangrigg/vim-beancount'
@@ -127,7 +127,7 @@
       " https://github.com/neoclide/coc.nvim
       Plug 'neoclide/coc.nvim'
 
-    "                                                                                       RUBY & RAILS
+    "                                                                                                       RUBY & RAILS
       " https://github.com/tpope/vim-rails
       " adds rails support to gf
       " syntax highlighting ++
@@ -213,21 +213,15 @@
       colorscheme everforest
 
   "                                                                                                    LANGUAGE SPECIFIC
-    "                                                                                      BEANCOUNT
+    "                                                                                                          BEANCOUNT
       " configure nathangrigg/vim-beancount
 
       " my beancount decimal goes on columnn 70
       let g:beancount_separator_col=70
 
-    "                                                                                       MARKDOWN
-      " md is markdown, for me!
-      au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-
-      " fold markdown
-      let g:markdown_folding = 1
-
-    "                                                                                        JS & TS
-      " neoclide/coc.nvim config
+    "                                                                                                           JS & TS
+      " neoclide/coc.nvim config -
+      " NB: remember to cd to the plug coc.nvim dir & yarn install
         " we are using typescript
         let g:coc_global_extensions = [ 'coc-tsserver' ]
 
@@ -400,7 +394,7 @@
         command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 
-    "                                                                                   RUBY & RAILS
+    "                                                                                                       RUBY & RAILS
       " Match ruby do/end
       runtime macros/matchit.vim
 
