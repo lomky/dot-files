@@ -1,17 +1,13 @@
+# Custom status line
 hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%D %Y %M %d %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
-#hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{r}%c %{w}| %{y}%D %Y %M %d %{w}| %{g}%l %{w}| %{-b kB}%u %-Lw%{= mW}%50> %n%f %t %{-}%+Lw%<"
 
+# reallong scrollback
 defscrollback 100000
 
 # Make the background refresh its color properly
 defbce "on"
 
-# Hide hardstatus: ctrl-a f
-bind f eval "hardstatus ignore"
-# # Show hardstatus: ctrl-a F
-bind F eval "hardstatus alwayslastline"
-
+# default screens
 screen -t vim
 screen -t bash
-screen -t serv
-screen -t sb
+screen -t server
