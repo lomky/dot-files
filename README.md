@@ -10,12 +10,6 @@ sudo apt install vim screen thefuck python3-distutils keepassxc curl rbenv i3-ga
 ```
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-nvm install node
-nvm use node
-```
-
-```bash
 rbenv init
 echo 'eval "$(rbenv init -)"' >>~/.bashrc && source ~/.bashrc
 mkdir -p "$(rbenv root)"/plugins
@@ -28,43 +22,31 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 
 ### Bash Files
 
-**.bash_profile** - _aka run-at-login_  
+**.bash_profile**
 
-UI machines:  
-`ln -s ~/.dot-files/bash/.bash_profile_local ~/.bash_profile`  
+```bash
+ln -s ~/.dot-files/bash/.bash_profile ~/
+ln -s ~/.dot-files/bash/.bashrc ~/
+ln -s ~/.dot-files/bash/.bashrc_git ~/
+ln -s ~/.dot-files/bash/.bash_aliases ~/
+```
 
-terminal machines:  
-`ln -s ~/.dot-files/bash/.bash_profile_remote ~/.bash_profile`  
-
-Machine specific overrides should be placed in file `~/.bash_profile_local`  
-
-**.bashrc** - _aka run on any terminal launch_  
-
-All machines:  
-`ln -s ~/.dot-files/bash/.bashrc ~/`  
-`ln -s ~/.dot-files/bash/.bashrc_git ~/`  
-
-Machine specific overrides should be placed in file `~/.bashrc_local`  
-
-
-**.bash_aliases**  
-
-All machines:  
-`ln -s ~/.dot-files/bash/.bash_aliases ~/`  
-
-Machine specific overrides should be placed in file `~/.bash_aliases_local`  
+Machine specific overrides placed in a `[base_file]_local` will be imported
 
 ### Vim files
 
-`ln -s ~/.dot-files/vim/.vimrc ~/`  
-
+```bash
+ln -s ~/.dot-files/vim/.vimrc ~/
+```
 Plugins install on first run.
 
 Machine specific overrides aren't well handled ¯\_(ツ)_/¯  
 
 ### Screen file
 
-`ln -s ~/.dot-files/screen/.screenrc ~/`  
+```bash
+ln -s ~/.dot-files/screen/.screenrc ~/
+```
 
 Machine specific overrides should be placed in file `~/.screenrc_local`  
 
@@ -72,20 +54,27 @@ Machine specific overrides should be placed in file `~/.screenrc_local`
 #### Set Git configs
 
 Set editor, user, and email. In this house we use `main`  
-`git config --global core.editor "vim"`  
-`git config --global user.email "email@example.com"`  
-`git config --global user.name "Kat Tipton"`  
-`git config --global init.defaultBranch main`  
+
+```bash
+git config --global core.editor "vim"
+git config --global user.email "email@example.com"
+git config --global user.name "Kat Tipton"
+git config --global init.defaultBranch main
+```
 
 Set aliases for a nice history log and to cleanup local merged branches  
-`git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"`  
-`git config --global alias.co checkout`  
+
+```bash
+git config --global alias.hist "log --graph --full-history --all --no-merges --pretty=format:'%Cred%h%Creset %ad %s %C(green)%d%Creset %C(bold blue)<%an>%Creset' --date=short"
+git config --global alias.co checkout
+```
 
 #### User-level Git ignore
 
-Unix machines:  
-`git config --global core.excludesfile ~/.gitignore`  
-`ln -s ~/.dot-files/git/.gitignore-nix ~/.gitignore`  
+```bash
+ln -s ~/.dot-files/git/.gitignore ~/
+git config --global core.excludesfile ~/.gitignore
+```
 
 #### Ask Git to stash my credentials
 
@@ -151,9 +140,13 @@ set the cron:
 
 # Version
 
-1.6.0
+1.7.0
 
 ## Version History
+#### 1.7.0 - 2022-01
+basic settings for bash, screen, & git cleanup
+abandon long disused variants
+readme formatting cleanup
 #### 1.6.0 - 2021-11
 rewrite vimrc
 beta background script
@@ -182,4 +175,4 @@ Prefer `_local` to branching. If it's good enough to commit, it's probably worth
 Began tracking version  
 
 # TODO
-c/p getting unwieldly, probably should look into automated things at this point
+c/p getting unwieldly, probably should look into a proper bash script
