@@ -97,20 +97,24 @@
       Plug 'tpope/vim-surround'
 
 
-    "                                                                                   ZETTLE NOTES
+    "                                                                                                       ZETTLE NOTES
       " vimwiki & vim-zettel to take better notes & manage them
       Plug 'vimwiki/vimwiki'
       Plug 'junegunn/fzf'
       Plug 'junegunn/fzf.vim'
       Plug 'michal-h21/vim-zettel'
 
+    "                                                                                                           NERDTree
+      " https://github.com/preservim/nerdtree
+      " sidebar file browser
+      Plug 'preservim/nerdtree'
   "                                                                                           LANGUAGE-SPECIFIC SETTINGS
     "                                                                                                          BEANCOUNT
       " https://github.com/nathangrigg/vim-beancount
       " Syntax highlighting, AlignCommodity, & ^X^O autocomplete accounts
       Plug 'nathangrigg/vim-beancount'
 
-    "                                                                                            JS & TS
+    "                                                                                                            JS & TS
       " JavaScript support
       " https://github.com/pangloss/vim-javascript
       Plug 'pangloss/vim-javascript'
@@ -128,6 +132,17 @@
       Plug 'neoclide/coc.nvim'
 
     "                                                                                                       RUBY & RAILS
+      " https://github.com/vim-ruby/vim-ruby
+      " vim ruby support - make sure we're on the newest!
+      Plug 'vim-ruby/vim-ruby'
+
+      " https://github.com/kana/vim-textobj-user
+      " https://github.com/nelstrom/vim-textobj-rubyblock
+      " ar - select all of a ruby-block
+      " ir - select insides of a ruby-block
+      Plug 'kana/vim-textobj-user'
+      Plug 'nelstrom/vim-textobj-rubyblock'
+
       " https://github.com/tpope/vim-rails
       " adds rails support to gf
       " syntax highlighting ++
@@ -153,10 +168,10 @@
 
   "                                                                                                         VIM SETTINGS
     "                                                                                                            GENERAL
-      set showcmd            " Show what has been typed in the lower right
-      set number             " use line numbers
-      set ruler              " use the ruler
-      set foldmethod=indent  "fold basedon indentation, by default
+      set showcmd               " Show what has been typed in the lower right
+      set number relativenumber " use hybrid line numbers
+      set ruler                 " use the ruler
+      set foldmethod=indent     "fold basedon indentation, by default
 
       " Low contrast highlight column 120
       if exists('+colorcolumn')
@@ -212,6 +227,9 @@
       let g:everforest_background = 'soft'
       colorscheme everforest
 
+    "                                                                                                           NERDTree
+      " Configure preservim/nerdtree
+      nnoremap <C-n> :NERDTreeToggle<CR>
   "                                                                                                    LANGUAGE SPECIFIC
     "                                                                                                          BEANCOUNT
       " configure nathangrigg/vim-beancount
@@ -395,7 +413,7 @@
 
 
     "                                                                                                       RUBY & RAILS
-      " Match ruby do/end
+      " Activate better matching, esp ruby do/end
       runtime macros/matchit.vim
 
       "rspec commands
