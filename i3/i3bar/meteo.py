@@ -65,7 +65,7 @@ if float(last_updated) + 300 > now:
 else:
   with urllib.request.urlopen("https://api.openweathermap.org/data/2.5/weather?id=" + CITYID + "&units=imperial&appid=" + APPID) as url:
     data = json.loads(url.read().decode())
-    weather = "🌡️" + str(round(data['main']['temp'])) + "℉" + "☴ " + str(round(data['wind']['speed'])) + " "
+    weather = "🌡️" + str(round(data['main']['temp'])) + "℉ " + "☴ " + str(round(data['wind']['speed'])) + " "
     # https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
     if int(data['weather'][0]['id']) >= 200 and int(data['weather'][0]['id']) < 300: # Group 2xx: Thunderstorm
       weather += "ϟ"
