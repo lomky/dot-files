@@ -135,9 +135,6 @@ set the cron:
 
 
 
-
-
-
 # Version
 
 1.7.0
