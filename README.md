@@ -3,6 +3,7 @@ Convenient backup of all my commonly used unix dot files, configurations, etc
 
 ## Installs
 
+### Linux
 ```bash
 sudo add-apt-repository ppa:regolith-linux/stable
 sudo apt update
@@ -17,10 +18,32 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | bash
 ```
 
+### OSX
+I once again find myself having to work on a ~~broken unix system~~ Mac. Alas.
+
+```bash
+#install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install rbenv powerlevel10k
+
+#install nvm
+# NB: go get the real line from https://github.com/nvm-sh/nvm#install--update-script because they hardcode version
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
 
 ## Structure
 
+### Shell Files
+#### zsh Files
+
+```bash
+ln -s ~/.dot-files/zsh/.zshrc ~/
+ln -s ~/.dot-files/zsh/.zprofile ~/
+ln -s ~/.dot-files/zsh/.p10k.zsh ~/
+```
+
 ### Bash Files
+Deprecated, finally using zsh
 
 **.bash_profile**
 
@@ -148,6 +171,10 @@ set the cron:
 1.7.0
 
 ## Version History
+#### 1.8.1 - 2023-03
+Making the swap to zsh
+Setting Mac stuff back up
+Minor vimrc tweaks
 #### 1.7.0 - 2022-01
 basic settings for bash, screen, & git cleanup
 abandon long disused variants

@@ -28,10 +28,9 @@
   " - any associated plugin (give the full/name)
 
   " Version History
-  " # 3.0
-  " Full rewrite
-  " Swap Vundle->VimPlug
-  " Serious Organizing
+  " # 3.1
+  " Turns out I hate relativenumber
+  " Column 66 is serving best for beancount now
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         SETUP                                                        "
@@ -165,9 +164,9 @@
   "                                                                                                         VIM SETTINGS
     "                                                                                                            GENERAL
       set showcmd               " Show what has been typed in the lower right
-      set number relativenumber " use hybrid line numbers
+      set number                " use line numbers
       set ruler                 " use the ruler
-      set foldmethod=indent     "fold basedon indentation, by default
+      set foldmethod=indent     " fold basedon indentation, by default
 
       " Low contrast highlight column 120
       if exists('+colorcolumn')
@@ -231,7 +230,7 @@
       " configure nathangrigg/vim-beancount
 
       " my beancount decimal goes on columnn 70
-      let g:beancount_separator_col=70
+      let g:beancount_separator_col=66
 
     "                                                                                                       RUBY & RAILS
       " Activate better matching, esp ruby do/end
