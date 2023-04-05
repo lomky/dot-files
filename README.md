@@ -29,6 +29,9 @@ brew install rbenv powerlevel10k
 #install nvm
 # NB: go get the real line from https://github.com/nvm-sh/nvm#install--update-script because they hardcode version
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+#install homebrew's huge-version vim
+brew install vim
 ```
 
 ## Structure
@@ -63,7 +66,7 @@ ln -s ~/.dot-files/vim/.vimrc ~/
 ```
 Plugins install on first run.
 
-Machine specific overrides aren't well handled ¯\_(ツ)_/¯
+Machine specific overrides aren't well handled
 
 ### Screen file
 
@@ -117,6 +120,8 @@ git config --global credential.helper osxkeychain
 
 ### Firefox profile styling
 
+First, install [Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/) and [TST More Tree Commands](https://addons.mozilla.org/en-US/firefox/addon/tst-more-tree-commands/), and move the sidebar to the right.
+
 To activate custom css, open Firefox & load `about:config`, set
 `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
 
@@ -130,6 +135,7 @@ ln -s ~/.dot-files/firefox/userChrome-nix.css $PROFILE_DIR/chrome/userChrome.css
 
 ### Font
 
+**Linux**
 ```bash
 git clone https://github.com/rubjo/victor-mono ~/.victor-mono
 mkdir ~/tmp ~/tmp/VM ~/.local/share/fonts/
@@ -137,6 +143,12 @@ cd ~/tmp/VM && unzip ~/.victor-mono/public/VictorMonoAll.zip && cd
 mv ~/tmp/VM/TTF ~/.local/share/fonts/VictorMono
 rm -rf ~/tmp/VM
 fc-cache -f -v
+```
+
+**Mac**
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-victor-mono
 ```
 
 ### i3wm
@@ -168,9 +180,12 @@ set the cron:
 
 # Version
 
-1.7.0
+1.8.2
 
 ## Version History
+#### 1.8.2 - 2023-04
+Add firefox details
+Better vim and font installation for mac
 #### 1.8.1 - 2023-03
 Making the swap to zsh
 Setting Mac stuff back up
