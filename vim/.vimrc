@@ -1,7 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                        WELCOME                                                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+"""""""""
   " Hello! This is my custom written vimrc, version 3. RubyConf2021 inspired me
   " to do a thourough refresh of my vimrc. Enjoy!
 
@@ -32,9 +29,8 @@
   " Turns out I hate relativenumber
   " Column 66 is serving best for beancount now
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                         SETUP                                                        "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETUP
+"""""""
   " Make sure our plugin tool is installed & run
   let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
   if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -47,13 +43,12 @@
     \| PlugInstall --sync | source $MYVIMRC
   \| endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                        PLUGINS                                                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+"""""""""
   call plug#begin()
 
-  "                                                                                                         VIM SETTINGS
-    "                                                                                                            GENERAL
+  " VIM SETTINGS
+  "   GENERAL
       " sensible default configs. Replaces nocompatible
       " https://github.com/tpope/vim-sensible
       Plug 'tpope/vim-sensible'
@@ -62,17 +57,21 @@
       " https://github.com/tpope/vim-sleuth
       Plug 'tpope/vim-sleuth'
 
+      " Vim Git integration
+      " https://github.com/tpope/vim-fugitive
+      Plug 'tpope/vim-fugitive'
+
       " use airline
       " https://github.com/vim-airline/vim-airline
       Plug 'vim-airline/vim-airline'
 
-    "                                                                                                              THEME
+  "   THEME
       " Color Schemes - https://vimcolorschemes.com/
       " https://github.com/sainnhe/everforest
       Plug 'sainnhe/everforest'
 
-  "                                                                                                                TOOLS
-    "                                                                                                             CTRL-P
+  " TOOLS
+  "   CTRL-P
       " Fuzzy-path finding with Ctrl-P
       " Press <F5> purge cache
       " Press <c-f> and <c-b> to cycle modes.
@@ -86,7 +85,7 @@
       " https://github.com/ctrlpvim/ctrlp.vim
       Plug 'ctrlpvim/ctrlp.vim'
 
-    "                                                                                                       SURROUND.VIM
+  "   SURROUND.VIM
       " Surround.vim - easily delete, change and add surroundings in pairs.
       " https://github.com/tpope/vim-surround
       " cs'" -> 'foo' becomes "foo"
@@ -95,25 +94,25 @@
       " ysiw -> hello world becomes { hello } world
       Plug 'tpope/vim-surround'
 
-
-    "                                                                                                       ZETTLE NOTES
+  "   ZETTLE NOTES
       " vimwiki & vim-zettel to take better notes & manage them
-      Plug 'vimwiki/vimwiki'
-      Plug 'junegunn/fzf'
-      Plug 'junegunn/fzf.vim'
-      Plug 'michal-h21/vim-zettel'
+      "Plug 'vimwiki/vimwiki'
+      "Plug 'junegunn/fzf'
+      "Plug 'junegunn/fzf.vim'
+      "Plug 'michal-h21/vim-zettel'
 
-    "                                                                                                           NERDTree
+  "   NERDTree
       " https://github.com/preservim/nerdtree
       " sidebar file browser
       Plug 'preservim/nerdtree'
-  "                                                                                           LANGUAGE-SPECIFIC SETTINGS
-    "                                                                                                          BEANCOUNT
+
+  " LANGUAGE-SPECIFIC SETTINGS
+  "   BEANCOUNT
       " https://github.com/nathangrigg/vim-beancount
       " Syntax highlighting, AlignCommodity, & ^X^O autocomplete accounts
       Plug 'nathangrigg/vim-beancount'
 
-    "                                                                                                            JS & TS
+  "   JS & TS
       " JavaScript support
       " https://github.com/pangloss/vim-javascript
       Plug 'pangloss/vim-javascript'
@@ -126,7 +125,7 @@
       " https://github.com/maxmellon/vim-jsx-pretty
       Plug 'maxmellon/vim-jsx-pretty'
 
-    "                                                                                                       RUBY & RAILS
+  "   RUBY & RAILS
       " https://github.com/vim-ruby/vim-ruby
       " vim ruby support - make sure we're on the newest!
       Plug 'vim-ruby/vim-ruby'
@@ -153,16 +152,19 @@
       " map <Leader>a :call RunAllSpecs()<CR>
       Plug 'thoughtbot/vim-rspec'
 
+  "   MARKDOWN
+      " https://github.com/preservim/vim-markdown
+      " vim markdown syntax and folding & its prereq
+      Plug 'godlygeek/tabular'
+      Plug 'preservim/vim-markdown'
 
   " Done listing Plugins - Initialize the plugin system
   call plug#end()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                        CONFIGS                                                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  "                                                                                                         VIM SETTINGS
-    "                                                                                                            GENERAL
+" CONFIGS
+"""""""""
+  " VIM SETTINGS
+  "   GENERAL
       set showcmd               " Show what has been typed in the lower right
       set number                " use line numbers
       set ruler                 " use the ruler
@@ -187,8 +189,9 @@
       " configure vim-airline/vim-airline
       " show all the buffers for single tab
       let g:airline#extensions#tabline#enabled = 1
+      let g:airline#extensions#branch#enabled = 1
 
-    "                                                                                                             SEARCH
+  "   SEARCH
       set incsearch     " highlight as typing
       set ignorecase    " ignore case
       set smartcase     " unless I type uppercase
@@ -213,7 +216,7 @@
           redraw
       endfunction
 
-    "                                                                                                              THEME
+  "   THEME
       " Configure sainnhe/everforest
 
       " Set dark or light mode
@@ -222,17 +225,17 @@
       let g:everforest_background = 'soft'
       colorscheme everforest
 
-    "                                                                                                           NERDTree
+  "   NERDTree
       " Configure preservim/nerdtree
       nnoremap <C-n> :NERDTreeToggle<CR>
-  "                                                                                                    LANGUAGE SPECIFIC
-    "                                                                                                          BEANCOUNT
-      " configure nathangrigg/vim-beancount
 
+  " LANGUAGE SPECIFIC
+  "   BEANCOUNT
+      " configure nathangrigg/vim-beancount
       " my beancount decimal goes on columnn 70
       let g:beancount_separator_col=66
 
-    "                                                                                                       RUBY & RAILS
+  "   RUBY & RAILS
       " Activate better matching, esp ruby do/end
       runtime macros/matchit.vim
 

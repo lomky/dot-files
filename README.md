@@ -154,9 +154,10 @@ brew install --cask font-victor-mono
 ### i3wm
 
 ```bash
-mkdir -p ~/.config/i3 ~/.config/i3status
+git clone https://github.com/lomky/i3blocks-contrib ~/.config/i3blocks
+mkdir -p ~/.config/i3
 ln -s ~/.dot-files/i3/i3-config ~/.config/i3/config
-ln -s ~/.dot-files/i3/i3status-config ~/.config/i3status/config
+ln -s ~/.dot-files/i3/i3blocks-config ~/.config/i3blocks/config
 ```
 
 Background images:
