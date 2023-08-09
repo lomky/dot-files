@@ -1,5 +1,6 @@
 # zhistory settings
 # Big history - larger histsize enables hist_expire_dups_first to function properly.
+export HISTFILE=~/.zsh_history
 export HISTSIZE=10010000
 export SAVEHIST=10000000
 
@@ -24,9 +25,17 @@ alias gdn='git diff --name-only'
 alias gap='git add --patch'
 alias gcp='git checkout --patch'
 
+alias snooze='systemctl suspend'
+
 # include my home bin, if I have one
 if [ -d "$HOME/bin" ] ; then
   PATH=$PATH:$HOME/bin
+  export PATH
+fi
+
+# include my home bin, if I have one
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH=$PATH:$HOME/.local/bin
   export PATH
 fi
 
@@ -34,6 +43,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
