@@ -65,6 +65,10 @@
       " https://github.com/vim-airline/vim-airline
       Plug 'vim-airline/vim-airline'
 
+      " try a git gutter
+      " https://github.com/airblade/vim-gitgutter
+      Plug 'airblade/vim-gitgutter'
+
   "   THEME
       " Color Schemes - https://vimcolorschemes.com/
       " https://github.com/sainnhe/everforest
@@ -161,6 +165,39 @@
   " Done listing Plugins - Initialize the plugin system
   call plug#end()
 
+" FUNCTIONS
+"""""""""
+
+  " scratch pad buffer
+  " modified from https://vi.stackexchange.com/a/21390
+  function! Scratch()
+    if bufnr("scratch") > 0
+      sbuffer scratch
+    else
+      split
+      noswapfile hide enew
+      setlocal buftype=nofile
+      setlocal bufhidden=hide
+      "setlocal nobuflisted
+      "lcd ~
+      file scratch
+    endif
+  endfunction
+
+  " blink the match we've just jumped to
+  function! HLNext (blinktime)
+    highlight HighlightColors ctermfg=black ctermbg=green
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('HighlightColors', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+  endfunction
+
+
 " CONFIGS
 """""""""
   " VIM SETTINGS
@@ -169,6 +206,8 @@
       set number                " use line numbers
       set ruler                 " use the ruler
       set foldmethod=indent     " fold basedon indentation, by default
+
+      set updatetime=100        " refresh faster
 
       " Low contrast highlight column 120
       if exists('+colorcolumn')
@@ -203,19 +242,6 @@
       nnoremap <silent> n   n:call HLNext(0.8)<cr>
       nnoremap <silent> N   N:call HLNext(0.8)<cr>
 
-      " blink the match we've just jumped to
-      function! HLNext (blinktime)
-          highlight HighlightColors ctermfg=black ctermbg=green
-          let [bufnum, lnum, col, off] = getpos('.')
-          let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-          let target_pat = '\c\%#\%('.@/.'\)'
-          let ring = matchadd('HighlightColors', target_pat, 101)
-          redraw
-          exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-          call matchdelete(ring)
-          redraw
-      endfunction
-
   "   THEME
       " Configure sainnhe/everforest
 
@@ -247,5 +273,9 @@
       map <Leader>l :call RunLastSpec()<CR>
       map <Leader>a :call RunAllSpecs()<CR>
 
-
       let mapleader="\\"
+
+  " Function config
+    " Scratch
+      " keybind Scratch
+      nnoremap <C-s> :call Scratch()<CR>
