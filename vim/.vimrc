@@ -98,12 +98,10 @@
       " ysiw -> hello world becomes { hello } world
       Plug 'tpope/vim-surround'
 
-  "   ZETTLE NOTES
-      " vimwiki & vim-zettel to take better notes & manage them
-      "Plug 'vimwiki/vimwiki'
-      "Plug 'junegunn/fzf'
-      "Plug 'junegunn/fzf.vim'
-      "Plug 'michal-h21/vim-zettel'
+  "   TagBar
+      " Class outlining
+      " https://github.com/preservim/tagbar
+      Plug 'preservim/tagbar'
 
   "   NERDTree
       " https://github.com/preservim/nerdtree
@@ -161,6 +159,11 @@
       " vim markdown syntax and folding & its prereq
       Plug 'godlygeek/tabular'
       Plug 'preservim/vim-markdown'
+
+  " ale
+      " Chime Setup
+      " https://github.com/w0rp/ale
+      Plug 'w0rp/ale'
 
   " Done listing Plugins - Initialize the plugin system
   call plug#end()
@@ -254,6 +257,10 @@
   "   NERDTree
       " Configure preservim/nerdtree
       nnoremap <C-n> :NERDTreeToggle<CR>
+
+  " TagBar
+      " Configure preservim/tagbar
+      nnoremap <C-m> :TagbarToggle<CR>
 
   " LANGUAGE SPECIFIC
   "   BEANCOUNT
