@@ -176,9 +176,6 @@ set the cron:
 
 
 
-
-
-
 # Version
 
 1.8.2
