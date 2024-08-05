@@ -1,16 +1,41 @@
 #!/bin/bash
+# BORKED - Unsplash discontinued their source addr
+# https://changelog.unsplash.com/deprecations/2021/11/25/source-deprecation.html
+
+arr[1]="green"
+arr[2]="cityscape"
+arr[3]="washington_dc"
+arr[4]="rainbow"
+arr[5]="space"
+arr[6]="cats"
+arr[7]="oakland"
+arr[8]="bicycle"
+arr[9]="birding"
+arr[10]="birds"
+arr[11]=""
+
+SIZE=${#arr[@]}
+RAND=$(($RANDOM % $SIZE))
+CAT=${arr[$RAND]}
+echo "ITS $SIZE, $RAND, AND $CAT!"
 
 if [ ! -z $1 ]; then
+  echo "Arg based!"
   wget -O ~/tmp/wallpaper.jpg https://source.unsplash.com/1600x900/?$1
-else
+elif [ -z $CAT ]; then
+  echo "Random!"
   wget -O ~/tmp/wallpaper.jpg https://source.unsplash.com/random
+else
+  echo "Category $CAT!"
+  wget -O ~/tmp/wallpaper.jpg https://source.unsplash.com/1600x900/?$CAT
 fi
 
-# Gnome
-#gsettings set org.gnome.desktop.background picture-uri file:///tmp/wallpaper.jpg
-
-# i3
-feh --bg-fill ~/tmp/wallpaper.jpg
-# make a png for the i3lock
-rm ~/tmp/wallpaper.png
-mogrify -format png ~/tmp/wallpaper.jpg
+if pgrep -x "i3" > /dev/null
+then
+  feh --bg-fill ~/tmp/wallpaper.jpg
+  # make a png for the i3lock
+  rm ~/tmp/wallpaper.png
+  mogrify -format png ~/tmp/wallpaper.jpg
+else
+  gsettings set org.gnome.desktop.background picture-uri file:///tmp/wallpaper.jpg
+fi
