@@ -75,6 +75,11 @@
       Plug 'sainnhe/everforest'
 
   " TOOLS
+  "   ALE
+      " Async Lint Engine!
+      " https://github.com/dense-analysis/ale
+      Plug 'dense-analysis/ale'
+
   "   CTRL-P
       " Fuzzy-path finding with Ctrl-P
       " Press <F5> purge cache
@@ -88,6 +93,9 @@
       " Use <c-z> to mark/unmark multiple files and <c-o> to open them.
       " https://github.com/ctrlpvim/ctrlp.vim
       Plug 'ctrlpvim/ctrlp.vim'
+      " https://github.com/tacahiroy/ctrlp-funky
+      " Fuzzy-function finding with Ctrl-P
+      Plug 'tacahiroy/ctrlp-funky'
 
   "   SURROUND.VIM
       " Surround.vim - easily delete, change and add surroundings in pairs.
@@ -122,6 +130,7 @@
       Plug 'pangloss/vim-javascript'
 
       " TypeScript syntax
+      " TODO: this is likely defunct
       " https://github.com/leafgarland/typescript-vim
       Plug 'leafgarland/typescript-vim'
 
@@ -155,6 +164,11 @@
       " map <Leader>l :call RunLastSpec()<CR>
       " map <Leader>a :call RunAllSpecs()<CR>
       Plug 'thoughtbot/vim-rspec'
+
+      " Ruby LSP
+      " this likely makes redundant some of the above ones
+      " https://github.com/Shopify/ruby-lsp
+      Plug 'Shopify/ruby-lsp'
 
   "   MARKDOWN
       " https://github.com/preservim/vim-markdown
@@ -229,6 +243,14 @@
       " show all the buffers for single tab
       let g:airline#extensions#tabline#enabled = 1
       let g:airline#extensions#branch#enabled = 1
+
+  "   SPLITS
+      " Ctrl+j/k/h/l to move between splits
+      map <C-j> <C-W>j
+      map <C-k> <C-W>k
+      map <C-h> <C-W>h
+      map <C-l> <C-W>l
+
 
   "   SEARCH
       set incsearch     " highlight as typing
