@@ -118,6 +118,15 @@ git credential-osxkeychain
 git config --global credential.helper osxkeychain
 ```
 
+### Kitty
+
+Linux:
+```bash
+ln -s ~/.dot-files/kitty/kitty.conf ~/.config/kitty/kitty.conf
+```
+
+Mac:
+
 ### Firefox profile styling
 
 First, install [Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/) and [TST More Tree Commands](https://addons.mozilla.org/en-US/firefox/addon/tst-more-tree-commands/), and move the sidebar to the right.
