@@ -24,7 +24,7 @@ I once again find myself having to work on a ~~broken unix system~~ Mac. Alas.
 ```bash
 #install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install rbenv powerlevel10k
+brew install rbenv powerlevel10k git
 
 #install nvm
 # NB: go get the real line from https://github.com/nvm-sh/nvm#install--update-script because they hardcode version
@@ -114,7 +114,6 @@ git config --global credential.helper 'cache --timeout=3600'
 Mac:
 
 ```bash
-git credential-osxkeychain
 git config --global credential.helper osxkeychain
 ```
 
@@ -156,7 +155,6 @@ fc-cache -f -v
 
 **Mac**
 ```bash
-brew tap homebrew/cask-fonts
 brew install --cask font-victor-mono
 ```
 
