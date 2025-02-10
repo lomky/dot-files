@@ -57,7 +57,11 @@ elif command -v apt > /dev/null; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -f ~/.p10k.zsh ]]; then
+  source ~/.p10k.zsh
+fi
 
 # Load local settings that don't need to migrate universally
-[[ -f "$HOME/.zshrc_local" ]] || source ~/.zshrc_local
+if [[ -f "$HOME/.zshrc_local" ]]; then
+  source ~/.zshrc_local
+fi
