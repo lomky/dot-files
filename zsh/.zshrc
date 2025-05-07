@@ -31,6 +31,8 @@ alias gd='git diff'
 alias gdn='git diff --name-only'
 alias gap='git add --patch'
 alias gcp='git checkout --patch'
+alias light_mode='kitten themes --reload-in=all Everforest Light Hard'
+alias dark_mode='kitten themes --reload-in=all Everforest Dark Hard'
 
 alias snooze='systemctl suspend'
 
