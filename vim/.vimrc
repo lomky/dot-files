@@ -69,6 +69,10 @@
       " https://github.com/airblade/vim-gitgutter
       Plug 'airblade/vim-gitgutter'
 
+      " Pleasant commit setup
+      " https://github.com/rhysd/committia.vim
+      Plug 'rhysd/committia.vim'
+
   "   THEME
       " Color Schemes - https://vimcolorschemes.com/
       " https://github.com/sainnhe/everforest
