@@ -9,7 +9,7 @@ The dotfiles:
 ```bash
 sudo apt install stow
 # in this repo:
-stow -v --ignore='manual' --ignore='inactive' --ignore='README.md' --ignore='LICENSE' .
+stow -v -t ~ --ignore='manual' --ignore='inactive' --ignore='README.md' --ignore='LICENSE' .
 ```
 
 Apps:
